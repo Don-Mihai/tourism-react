@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import Auth from "./pages/Auth";
 import Register from "./pages/Register";
 import Posts from ".src/pages/Posts";
+import Profile from './pages/Profile';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "/posts",
     element: <Posts />,
+  },
+  {
+    path: '/profile',
+    element: <Profile />,
   },
   {
     path: "*",
