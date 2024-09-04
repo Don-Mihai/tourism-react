@@ -11,6 +11,7 @@ import {
   Route,
   Link,
 } from "react-router-dom";
+import HomePage from "./pages/homePage";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: "/register",
     element: <Register />,
+  },
+  {
+    path: "/home",
+    element: <HomePage />,
   },
   {
     path: "/posts",
