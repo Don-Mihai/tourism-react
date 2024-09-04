@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Auth from "./pages/Auth";
+import About from "./pages/About";
 import Register from "./pages/Register";
 import Posts from ".src/pages/Posts";
 import Profile from './pages/Profile';
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
   {
     path: "/auth",
     element: <Auth />,
+  },
+  {
+    path: "/about",
+    element: <About />,
   },
   {
     path: "/register",
