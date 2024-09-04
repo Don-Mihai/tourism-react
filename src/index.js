@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import Auth from './pages/Auth';
 import Register from './pages/Register';
 import { createBrowserRouter, RouterProvider, Route, Link } from 'react-router-dom';
+import Profile from './pages/Profile';
 
 const router = createBrowserRouter([
     {
@@ -12,6 +13,10 @@ const router = createBrowserRouter([
     {
         path: '/register',
         element: <Register />,
+    },
+    {
+        path: '/profile',
+        element: <Profile />,
     },
     {
         path: '*',
