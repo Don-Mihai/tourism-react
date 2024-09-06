@@ -1,0 +1,47 @@
+.register {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+
+    &__title {
+        font-size: 24px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    &__inputs {
+        margin-bottom: 20px;
+    }
+
+    &__input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+
+        &:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+    }
+
+    &__footer {
+        text-align: center;
+        font-size: 14px;
+    }
+
+    &__link {
+        color: #007bff;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

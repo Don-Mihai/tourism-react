@@ -3,15 +3,12 @@ import ReactDOM from "react-dom/client";
 import Auth from "./pages/Auth";
 import About from "./pages/About";
 import Register from "./pages/Register";
-import Posts from ".src/pages/Posts";
+import Posts from './pages/Posts';
 import Profile from './pages/Profile';
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Route,
-  Link,
-} from "react-router-dom";
-import HomePage from "./pages/homePage";
+import HomePage from './pages/Home';
+import { createBrowserRouter, RouterProvider, Route, Link } from 'react-router-dom';
+import './styles/styles.scss';
+
 
 const router = createBrowserRouter([
   {
