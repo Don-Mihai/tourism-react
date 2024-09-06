@@ -1,0 +1,14 @@
+{
+    "users": [
+        {
+            "id": "65ab",
+            "name": "mihai",
+            "email": "mihai807@mail.ru",
+            "password": "qwerqwerqwer"
+        }
+    ],
+    "hotels": [],
+    "restaurants": [],
+    "places": [],
+    "tours": []
+}
