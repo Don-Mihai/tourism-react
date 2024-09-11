@@ -1,14 +1,18 @@
 {
-    "users": [
-        {
-            "id": "65ab",
-            "name": "mihai",
-            "email": "mihai807@mail.ru",
-            "password": "qwerqwerqwer"
-        }
-    ],
-    "hotels": [],
-    "restaurants": [],
-    "places": [],
-    "tours": []
+  "users": [
+    {
+      "id": "65ab",
+      "name": "Maria",
+      "lastname": "Fedchenko",
+      "email": "masha-nasha@mail.es",
+      "password": "qwerqwerqwer",
+      "phone": "+79031009900",
+      "address": "Moscow CA zip 123456",
+      "lastName": "Fedchenko"
+    }
+  ],
+  "hotels": [],
+  "restaurants": [],
+  "places": [],
+  "tours": []
 }
