@@ -1,34 +1,33 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import Auth from "./pages/Auth";
-import About from "./pages/About";
-import Register from "./pages/Register";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import Auth from './pages/Auth';
+import About from './pages/About';
+import Register from './pages/Register';
 import Posts from './pages/Posts';
 import Profile from './pages/Profile';
 import HomePage from './pages/Home';
 import { createBrowserRouter, RouterProvider, Route, Link } from 'react-router-dom';
 import './styles/styles.scss';
 
-
 const router = createBrowserRouter([
   {
-    path: "/auth",
+    path: '/auth',
     element: <Auth />,
   },
   {
-    path: "/about",
+    path: '/about',
     element: <About />,
   },
   {
-    path: "/register",
+    path: '/register',
     element: <Register />,
   },
   {
-    path: "/home",
+    path: '/home',
     element: <HomePage />,
   },
   {
-    path: "/posts",
+    path: '/posts',
     element: <Posts />,
   },
   {
@@ -36,10 +35,10 @@ const router = createBrowserRouter([
     element: <Profile />,
   },
   {
-    path: "*",
+    path: '*',
     element: <div>404 - Page Not Found</div>,
   },
 ]);
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<RouterProvider router={router} />);
