@@ -26,10 +26,12 @@
         "prepare": "husky"
     },
     "lint-staged": {
-        "*.{js, jsx, ts, tsx, scss, css}": [
-            "prettier --write"
+        "**/*.{js,jsx,tsx,ts,less,md}": [
+            "prettier --write",
+            "git add"
         ]
     },
+
     "eslintConfig": {
         "extends": [
             "react-app",
