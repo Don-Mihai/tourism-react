@@ -3,6 +3,11 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
+        "@emotion/react": "^11.13.3",
+        "@emotion/styled": "^11.13.0",
+        "@mui/icons-material": "^6.1.0",
+        "@mui/material": "^6.1.0",
+        "@mui/styled-engine-sc": "^6.1.0",
         "axios": "^1.7.7",
         "eslint-config-prettier": "^9.1.0",
         "eslint-plugin-prettier": "^5.2.1",
@@ -13,7 +18,8 @@
         "react-dom": "^18.3.1",
         "react-router-dom": "^6.26.1",
         "react-scripts": "5.0.1",
-        "sass": "^1.78.0"
+        "sass": "^1.78.0",
+        "styled-components": "^6.1.13"
     },
     "scripts": {
         "start": "react-scripts start",
@@ -31,7 +37,6 @@
             "git add"
         ]
     },
-
     "eslintConfig": {
         "extends": [
             "react-app",
