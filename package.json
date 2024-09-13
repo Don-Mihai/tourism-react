@@ -31,7 +31,7 @@
         "prepare": "husky"
     },
     "lint-staged": {
-        "**/*.{js,jsx,tsx,ts,css,scss,less,md}": [
+        "**/*.{js,jsx,tsx,ts,css,less,md}": [
             "prettier --write",
             "git add"
         ]
