@@ -10,7 +10,8 @@ const UserProfile = () => {
   }, []); //нужен чтобы контролировать состояния компонентов, когда прогрузился обновился закрылся или когда меняется переменная
 
   const fetchUser = async () => {
-    const user = (await axios.get('http://localhost:3001/users')).data[0];
+    const id = localStorage.getItem('userId');
+    const user = (await axios.get(`http://localhost:3001/users/${id}`)).data;
     setUser(user);
   };
 
@@ -27,7 +28,19 @@ const UserProfile = () => {
   return (
     <div className="user-profile">
       <div className="user-profile__header">
-        <Avatar alt="User Avatar" src={user.avatarUrl} className="user-profile__avatar" sx={{ width: 100, height: 100 }} />
+        <Avatar alt="User Avatar" src={user.avatarUrl} className="user-profile__avatar" sx={{ width: 100, height: 100 }}>
+          {/* if( user.name) {
+            опциональная цепочка
+            user.name[0]
+          } else {
+            undefined
+          } */}
+          {/* Знак вопроса после user - для надежности. А после name и lastName - это метод, но данные еще не получил и пытаается их получить из undefined  */}
+          {user.name?.[0]}
+          {user.lastName?.[0]}
+        </Avatar>
+        {/* путь до public */}
+        {/* <img src="/arno.jpg" alt="" /> */}
         <h2 className="user-profile__title">User Profile</h2>
       </div>
 
