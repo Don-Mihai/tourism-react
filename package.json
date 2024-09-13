@@ -28,19 +28,12 @@
         "eject": "react-scripts eject",
         "server": "json-server -w db.json --port 3001",
         "precommit": "lint-staged",
-        "eslint": "node_modules\\.bin\\eslint src\\",
         "prepare": "husky"
     },
     "lint-staged": {
-        "**/*.{js,jsx,tsx,ts,less,md}": [
+        "**/*.{js,jsx,tsx,ts,css,scss,less,md}": [
             "prettier --write",
             "git add"
-        ]
-    },
-    "eslintConfig": {
-        "extends": [
-            "react-app",
-            "react-app/jest"
         ]
     },
     "browserslist": {
