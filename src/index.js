@@ -6,8 +6,10 @@ import Register from './pages/Register';
 import Posts from './pages/Posts';
 import Profile from './pages/Profile';
 import HomePage from './pages/Home';
+
 import { createBrowserRouter, RouterProvider, Route, Link } from 'react-router-dom';
 import './styles/styles.scss';
+import HotelsPage from './pages/HotelsPage';
 
 const router = createBrowserRouter([
   {
@@ -33,6 +35,10 @@ const router = createBrowserRouter([
   {
     path: '/profile',
     element: <Profile />,
+  },
+  {
+    path: '/hotels',
+    element: <HotelsPage />,
   },
   {
     path: '*',

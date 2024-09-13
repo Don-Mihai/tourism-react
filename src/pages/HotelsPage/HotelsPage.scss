@@ -1,0 +1,45 @@
+$primary-color: #1976d2;
+$secondary-color: #dc004e;
+$text-color: #333;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hotels-page {
+  padding: 16px;
+
+  &__title {
+    text-align: center;
+    color: $primary-color;
+    margin-bottom: 32px;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__card {
+    margin: 16px;
+
+    .MuiCard-root {
+      max-width: 345px;
+
+      .MuiCardMedia-root {
+        height: 194px;
+      }
+
+      .MuiCardContent-root {
+        text-align: left;
+      }
+
+      .MuiButton-root {
+        margin: 16px;
+      }
+    }
+  }
+}
