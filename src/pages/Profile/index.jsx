@@ -27,7 +27,7 @@ const UserProfile = () => {
   return (
     <div className="user-profile">
       <div className="user-profile__header">
-        <Avatar alt="User Avatar" src="/static/images/avatar/1.jpg" className="user-profile__avatar" sx={{ width: 100, height: 100 }} />
+        <Avatar alt="User Avatar" src={user.avatarUrl} className="user-profile__avatar" sx={{ width: 100, height: 100 }} />
         <h2 className="user-profile__title">User Profile</h2>
       </div>
 
