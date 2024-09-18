@@ -23,11 +23,19 @@ $text-color: #333;
     justify-content: center;
   }
 
+  &__stars{
+    margin-left: 14px;
+  }
+
   &__card {
     margin: 16px;
+    
 
     .MuiCard-root {
       max-width: 345px;
+      display: flex;
+      flex-direction: column;
+
 
       .MuiCardMedia-root {
         height: 194px;
