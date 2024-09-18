@@ -9,9 +9,34 @@
       "address": "Moscow CA zip 123456",
       "lastName": "Fedchenko",
       "avatarUrl": "https://cs6.livemaster.ru/storage/51/8d/e9304e78c01418b5ea956d3be36a.jpg"
+    },
+    {
+      "id": "32ab",
+      "name": "arnolid",
+      "email": "arnolid@mail.ru",
+      "password": "qwerqwerqwer",
+      "phone": "+79031009900",
+      "address": "Moscow CA zip 123456",
+      "lastName": "Franchesko",
+      "avatarUrl": "https://cs6.livemaster.ru/storage/51/8d/e9304e78c01418b5ea956d3be36a.jpg"
     }
   ],
-  "hotels": [],
+  "hotels": [
+    {
+      "id": 1,
+      "name": "Hotel A",
+      "description": "A beautiful hotel in Colombo.",
+      "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2c/20/39/92/rayavadee-swimmimg-pool.jpg?w=1200&h=-1&s=1",
+      "rating": 5
+    },
+    {
+      "id": 2,
+      "name": "Hotel B",
+      "description": "A luxurious hotel in Kandy.",
+      "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/52/0a/54/manta-pool.jpg?w=1200&h=-1&s=1",
+      "rating": 4
+    }
+  ],
   "restaurants": [],
   "places": [],
   "tours": []

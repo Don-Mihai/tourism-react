@@ -3,24 +3,6 @@ import { Card, CardMedia, CardContent, Typography, Button, Rating } from '@mui/m
 import './HotelsPage.scss';
 import axios from 'axios';
 
-const hotels = [
-  {
-    id: 1,
-    name: 'Hotel A',
-    description: 'A beautiful hotel in Colombo.',
-    image: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2c/20/39/92/rayavadee-swimmimg-pool.jpg?w=1200&h=-1&s=1',
-    rating: 5,
-  },
-  {
-    id: 2,
-    name: 'Hotel B',
-    description: 'A luxurious hotel in Kandy.',
-    image: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/52/0a/54/manta-pool.jpg?w=1200&h=-1&s=1',
-    rating: 4,
-  },
-  // Add more hotels as needed
-];
-
 const HotelsPage = () => {
   const [hotels, setHotels] = useState([]);
 
