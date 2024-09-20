@@ -97,7 +97,7 @@ const Header = () => {
         >
           <Link to={'/profile'}>
             <MenuItem onClick={handleClose}>
-              <Avatar /> Profile
+              <Avatar className="avatar" /> Profile
             </MenuItem>
           </Link>
 
