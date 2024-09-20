@@ -1,8 +1,13 @@
+import Header from '../../components/Header';
+
 const homePage = () => {
   return (
-    <div>
-      <h2> Главная</h2>
-    </div>
+    <>
+      <Header />
+      <div>
+        <h2> Главная</h2>
+      </div>
+    </>
   );
 };
 
