@@ -57,8 +57,9 @@ const HomePage = () => {
             className="main-page__search-input"
             style={{ marginRight: '10px', flex: 1 }}
           />
-          {Boolean(interval) && <span className="main-page__interval">Длительность: {interval} дн.</span>} /**Если приходит false, дальше не проверяет. Если
-          true, проверяет дальше. */
+          {Boolean(interval) && <span className="main-page__interval">Длительность: {interval} дн.</span>}
+          {/* Если приходит false, дальше не проверяет. Если
+          true, проверяет дальше. */}
           <TextField
             onChange={(e) => setDateEnd(e)}
             label="Дата выезда"
