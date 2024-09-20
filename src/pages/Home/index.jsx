@@ -1,10 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, TextField, Card, CardContent, Typography, MenuItem } from '@mui/material';
 import './Home.scss';
 
 import Header from '../../components/Header';
+import moment from 'moment';
 
-const homePage = () => {
+const HomePage = () => {
+  const [dateStart, setDateStart] = useState('');
+  const [dateEnd, setDateEnd] = useState('');
+  const [interval, setInterval] = useState(0);
+
+  const handleDate = () => {
+    const start = moment(dateStart.target?.value);
+    const end = moment(dateEnd.target?.value);
+    const interval = end.diff(start, 'days');
+    console.log(interval);
+    setInterval(interval);
+
+    // const date = new Date(); //new - из темы классов, когда создается экземпляр класса. Создается тип данных date.
+    //console.log(dateStart.target?.value, dateEnd.target?.value); //знак вопроса для того чтобы если нет value, то не было бы ошибки
+  };
+
   return (
     <>
       <Header />
@@ -33,6 +49,7 @@ const homePage = () => {
         <div className="main-page__search">
           <TextField label="Искать направления" variant="outlined" className="main-page__search-input" style={{ marginRight: '10px', flex: 1 }} />
           <TextField
+            onChange={(e) => setDateStart(e)}
             label="Дата заезда"
             type="date"
             variant="outlined"
@@ -40,7 +57,10 @@ const homePage = () => {
             className="main-page__search-input"
             style={{ marginRight: '10px', flex: 1 }}
           />
+          {Boolean(interval) && <span className="main-page__interval">Длительность: {interval} дн.</span>} /**Если приходит false, дальше не проверяет. Если
+          true, проверяет дальше. */
           <TextField
+            onChange={(e) => setDateEnd(e)}
             label="Дата выезда"
             type="date"
             variant="outlined"
@@ -60,7 +80,7 @@ const homePage = () => {
             <MenuItem value="10000">$10,000</MenuItem>
             <MenuItem value="20000">$20,000</MenuItem>
           </TextField>
-          <Button variant="contained" color="primary" className="main-page__cta-button" style={{ flex: 0 }}>
+          <Button onClick={handleDate} variant="contained" color="primary" className="main-page__cta-button" style={{ flex: 0 }}>
             Найти
           </Button>
         </div>
@@ -129,4 +149,4 @@ const homePage = () => {
   );
 };
 
-export default homePage;
+export default HomePage;
