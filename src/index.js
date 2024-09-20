@@ -10,6 +10,7 @@ import HomePage from './pages/Home';
 import { createBrowserRouter, RouterProvider, Route, Link } from 'react-router-dom';
 import './styles/styles.scss';
 import HotelsPage from './pages/HotelsPage';
+import './styles/reset.css';
 
 const router = createBrowserRouter([
   {
