@@ -11,13 +11,33 @@
 
   &__search {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     padding: 20px;
-    background-color: #e0f7fa;
+    background-color: #ffffff;
+    border-radius: 10px;
+    max-width: 1200px; /* Ограничение ширины контейнера */
+    margin: 20px auto; /* Центрирование блока на странице */
   }
 
   &__search-input {
-    max-width: 600px;
+    flex: 1;
+    margin-right: 10px;
+    min-width: 180px;
+  }
+
+  &__cta-button {
+    margin-left: 10px; /* Отступ от кнопки поиска */
+    background-color: #ffa726; /* Цвет кнопки */
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #fb8c00; /* Темнее при наведении */
+    }
   }
 
   &__section {
