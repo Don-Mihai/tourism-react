@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, TextField, Card, CardContent, Typography } from '@mui/material';
+import { Button, TextField, Card, CardContent, Typography, MenuItem } from '@mui/material';
 import './Home.scss';
 
 import Header from '../../components/Header';
@@ -30,9 +30,39 @@ const homePage = () => {
             Исследовать Бали
           </Button>
         </header>
-
         <div className="main-page__search">
-          <TextField label="Искать направления" variant="outlined" fullWidth className="main-page__search-input" />
+          <TextField label="Искать направления" variant="outlined" className="main-page__search-input" style={{ marginRight: '10px', flex: 1 }} />
+          <TextField
+            label="Дата заезда"
+            type="date"
+            variant="outlined"
+            InputLabelProps={{ shrink: true }}
+            className="main-page__search-input"
+            style={{ marginRight: '10px', flex: 1 }}
+          />
+          <TextField
+            label="Дата выезда"
+            type="date"
+            variant="outlined"
+            InputLabelProps={{ shrink: true }}
+            className="main-page__search-input"
+            style={{ marginRight: '10px', flex: 1 }}
+          />
+          <TextField
+            select
+            label="Лимит цены"
+            variant="outlined"
+            defaultValue="5000"
+            className="main-page__search-input"
+            style={{ marginRight: '10px', flex: 1 }}
+          >
+            <MenuItem value="5000">$5,000</MenuItem>
+            <MenuItem value="10000">$10,000</MenuItem>
+            <MenuItem value="20000">$20,000</MenuItem>
+          </TextField>
+          <Button variant="contained" color="primary" className="main-page__cta-button" style={{ flex: 0 }}>
+            Найти
+          </Button>
         </div>
 
         <div className="main-page__section main-page__section--highlighted">
