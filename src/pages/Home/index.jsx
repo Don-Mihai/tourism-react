@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button, TextField, Card, CardContent, Typography, MenuItem } from '@mui/material';
+import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import './Home.scss';
 
 import Header from '../../components/Header';
@@ -26,16 +27,23 @@ const HomePage = () => {
       <Header />
       <div className="main-page">
         <header className="main-page__header">
-          <img
-            width="100%"
-            src="./img/beach.jpg"
-            alt="Пляж Бали"
-            className="main-page__header-image"
-            style={{
-              height: '400px',
-              objectFit: 'cover',
-            }}
-          />
+          <div className="banner">
+            <img
+              width="100%"
+              src="./img/beach.jpg"
+              alt="Пляж Бали"
+              className="main-page__header-image"
+              style={{
+                height: '400px',
+                objectFit: 'cover',
+              }}
+            />
+            <div className="play">
+              <a href="https://youtu.be/BFS9n4B_2xA?si=hMrxdcDxyim24BIq" target="_blank" rel="noopener noreferrer">
+                <PlayCircleIcon style={{ fontSize: 80, color: '#f9ab30' }} />
+              </a>
+            </div>
+          </div>
           <Typography variant="h2" component="h1" gutterBottom className="main-page__header-title">
             Добро пожаловать на Бали
           </Typography>

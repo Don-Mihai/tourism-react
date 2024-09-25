@@ -5,10 +5,6 @@
     margin-bottom: 40px;
   }
 
-  &__cta-button {
-    margin-top: 20px;
-  }
-
   &__search {
     position: relative;
     display: flex;
@@ -34,8 +30,9 @@
   }
 
   &__cta-button {
+    margin-top: 20px;
     margin-left: 10px; /* Отступ от кнопки поиска */
-    background-color: #ffa726; /* Цвет кнопки */
+    background-color: #ffa726 !important; /* Цвет кнопки */
     padding: 10px 20px;
     color: white;
     border: none;
@@ -43,7 +40,7 @@
     cursor: pointer;
 
     &:hover {
-      background-color: #fb8c00; /* Темнее при наведении */
+      background-color: #fb8c00 !important; /* Темнее при наведении */
     }
   }
 
@@ -77,5 +74,56 @@
   &__feature-card {
     width: 30%;
     min-width: 250px;
+  }
+}
+
+.banner {
+  position: relative;
+}
+
+.play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.play a {
+  position: relative;
+  display: inline-block;
+}
+
+.play a .MuiSvgIcon-root {
+  z-index: 1;
+  position: relative;
+}
+
+.play:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 160px; /* Увеличить размер до больше чем иконка */
+  height: 160px;
+  background-color: rgba(249, 171, 48, 0.5);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 0;
+  opacity: 0.8;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
   }
 }
