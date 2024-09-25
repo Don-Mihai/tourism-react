@@ -12,6 +12,9 @@ import './styles/styles.scss';
 import HotelsPage from './pages/HotelsPage';
 import './styles/reset.css';
 
+import { store } from './redux/store.js';
+import { Provider } from 'react-redux';
+
 const router = createBrowserRouter([
   {
     path: '/auth',
@@ -48,4 +51,8 @@ const router = createBrowserRouter([
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<RouterProvider router={router} />);
+root.render(
+  <Provider store={store}>
+    <RouterProvider router={router} />
+  </Provider>
+);

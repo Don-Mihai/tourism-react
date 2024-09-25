@@ -3,9 +3,13 @@ import { Card, CardMedia, CardContent, Typography, Button, Rating } from '@mui/m
 import './HotelsPage.scss';
 import axios from 'axios';
 import Header from '../../components/Header';
+import { useSelector, useDispatch } from 'react-redux';
+import { decrement, increment } from '../../redux/counter';
 
 const HotelsPage = () => {
   const [hotels, setHotels] = useState([]);
+  const value = useSelector((store) => store.counter.value);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     getHotels();
@@ -15,9 +19,23 @@ const HotelsPage = () => {
     const hotels = (await axios.get('http://localhost:3001/hotels')).data;
     setHotels(hotels);
   };
+
+  const handlePlus = () => {
+    dispatch(increment());
+  };
+
+  const handleMinus = () => {
+    dispatch(decrement());
+  };
+
   return (
     <>
       <Header />
+      <div className="counter">
+        <button onClick={handlePlus}>+</button>
+        <button onClick={handleMinus}>-</button>
+        {value}
+      </div>
       <div className="hotels-page">
         <h1 className="hotels-page__title">Hotels in Sri Lanka</h1>
         <div className="hotels-page__list">
