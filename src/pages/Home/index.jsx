@@ -4,6 +4,7 @@ import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import './Home.scss';
 
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import moment from 'moment';
 
 const HomePage = () => {
@@ -167,6 +168,7 @@ const HomePage = () => {
             </Card>
           </div>
         </div>
+        <Footer />
       </div>
     </>
   );
