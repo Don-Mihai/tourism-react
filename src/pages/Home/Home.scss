@@ -81,19 +81,6 @@
   &__card {
     width: 300px;
   }
-
-  &__features {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 20px;
-  }
-
-  &__feature-card {
-    width: 30%;
-    min-width: 250px;
-  }
 }
 
 .main-page__banner {
@@ -157,3 +144,9 @@ h1 {
   color: white;
 }
 
+.main-page__card-image {
+  width: 100%; /* Изображения будут занимать всю ширину контейнера */
+  height: 200px; /* Фиксированная высота для всех изображений */
+  object-fit: cover; /* Сохраняет пропорции изображения, обрезая его по краям при необходимости */
+  border-radius: 8px; /* Необязательно: добавляет скругленные углы, если нужно */
+}

@@ -115,14 +115,14 @@ const HomePage = () => {
           <div className="main-page__cards">
             <Card className="main-page__card">
               <CardContent>
-                <img src="https://example.com/ubud.jpg" alt="Убуд" className="main-page__card-image" />
+                <img src="./img/ubud.jpg" alt="Убуд" className="main-page__card-image" />
                 <Typography variant="h5">Убуд</Typography>
                 <Typography variant="body2">Центр традиционных ремесел и танцев, окруженный пышной природой и храмами.</Typography>
               </CardContent>
             </Card>
             <Card className="main-page__card">
               <CardContent>
-                <img src="https://example.com/seminyak.jpg" alt="Семиньяк" className="main-page__card-image" />
+                <img src="./img/seminiak.jpg" alt="Семиньяк" className="main-page__card-image" />
                 <Typography variant="h5">Семиньяк</Typography>
                 <Typography variant="body2">
                   Яркий пляжный город, известный своими роскошными курортами, элитными бутиками и оживленной ночной жизнью.
@@ -131,7 +131,7 @@ const HomePage = () => {
             </Card>
             <Card className="main-page__card">
               <CardContent>
-                <img src="https://example.com/nusa-dua.jpg" alt="Нуса-Дуа" className="main-page__card-image" />
+                <img src="./img/nusa-dua.jpg" alt="Нуса-Дуа" className="main-page__card-image" />
                 <Typography variant="h5">Нуса-Дуа</Typography>
                 <Typography variant="body2">Уникальное место с мировыми курортами, песчаными пляжами и спокойными водами.</Typography>
               </CardContent>
@@ -143,24 +143,24 @@ const HomePage = () => {
           <Typography variant="h4" gutterBottom>
             Почему выбирают Бали
           </Typography>
-          <div className="main-page__features">
-            <Card className="main-page__feature-card">
+          <div className="main-page__cards">
+            <Card className="main-page__card">
               <CardContent>
-                <img src="https://example.com/nature.jpg" alt="Удивительная природа" className="main-page__feature-image" />
+                <img src="./img/nature.jpg" alt="Удивительная природа" className="main-page__card-image" />
                 <Typography variant="h6">Удивительная природа</Typography>
                 <Typography variant="body2">Откройте для себя потрясающие пейзажи, от пляжей до гор.</Typography>
               </CardContent>
             </Card>
-            <Card className="main-page__feature-card">
+            <Card className="main-page__card">
               <CardContent>
-                <img src="https://example.com/culture.jpg" alt="Богатая культура" className="main-page__feature-image" />
+                <img src="./img/culture.jpg" alt="Богатая культура" className="main-page__card-image" />
                 <Typography variant="h6">Богатая культура</Typography>
                 <Typography variant="body2">Исследуйте уникальные традиции Бали, храмы и церемонии.</Typography>
               </CardContent>
             </Card>
-            <Card className="main-page__feature-card">
+            <Card className="main-page__card">
               <CardContent>
-                <img src="https://example.com/luxury.jpg" alt="Роскошное проживание" className="main-page__feature-image" />
+                <img src="./img/luxury.jpg" alt="Роскошное проживание" className="main-page__card-image" />
                 <Typography variant="h6">Роскошное проживание</Typography>
                 <Typography variant="body2">Останавливайтесь в известных на весь мир курортах, виллах и пляжных отелях.</Typography>
               </CardContent>
