@@ -12,12 +12,12 @@
     },
     {
       "id": "32ab",
-      "name": "arnolid",
-      "email": "arnolid@mail.ru",
-      "password": "qwerqwerqwer",
+      "name": "Arnold",
+      "email": "admin@mail.ru",
+      "password": "admin",
       "phone": "+79031009900",
       "address": "Moscow CA zip 123456",
-      "lastName": "Franchesko",
+      "lastName": "Francheskoo",
       "avatarUrl": "https://cs6.livemaster.ru/storage/51/8d/e9304e78c01418b5ea956d3be36a.jpg"
     }
   ],

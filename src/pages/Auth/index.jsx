@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Auth.scss';
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { setLocalUserId } from '../../redux/user';
 
 const initialValues = {
   email: '',
@@ -12,6 +14,7 @@ const Auth = () => {
   const [formValues, setFormValues] = useState(initialValues);
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const onChange = (event) => {
     const value = event.target.value;
@@ -28,7 +31,7 @@ const Auth = () => {
     const user = (await axios.get(`http://localhost:3001/users?email=${formValues.email}&password=${formValues.password}`)).data[0];
 
     if (user) {
-      localStorage.setItem('userId', user.id);
+      dispatch(setLocalUserId(user.id));
       navigate('/profile');
     }
   };

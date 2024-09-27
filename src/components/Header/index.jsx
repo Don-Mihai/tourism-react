@@ -9,10 +9,11 @@ import { decrement, increment } from '../../redux/counter';
 import PersonAdd from '@mui/icons-material/PersonAdd';
 import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
+import { fetchUserById } from '../../redux/user';
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState(null);
-  const [user, setUser] = useState({});
+  const fetchedUser = useSelector((store) => store.user.user);
 
   const dispatch = useDispatch();
   const handlePlus = () => {
@@ -26,7 +27,8 @@ const Header = () => {
   const open = Boolean(anchorEl);
 
   useEffect(() => {
-    fetchUser();
+    dispatch(fetchUserById());
+    // fetchUser();
   }, []);
 
   const handleClick = (event) => {
@@ -37,14 +39,14 @@ const Header = () => {
     setAnchorEl(null);
   };
 
-  const fetchUser = async () => {
-    const id = localStorage.getItem('userId');
+  // const fetchUser = async () => {
+  //   const id = localStorage.getItem('userId');
 
-    try {
-      const user = (await axios.get(`http://localhost:3001/users/${id}`)).data;
-      setUser(user);
-    } catch (error) {}
-  };
+  //   try {
+  //     const user = (await axios.get(`http://localhost:3001/users/${id}`)).data;
+  //     setUser(user);
+  //   } catch (error) {}
+  // };
 
   const logout = () => {
     localStorage.clear();
@@ -71,7 +73,7 @@ const Header = () => {
 
       <div className="header__user">
         {/* <Link to={'/profile'}> */}
-        <Avatar onClick={handleClick} src={user.avatarUrl}></Avatar>
+        <Avatar onClick={handleClick} src={fetchedUser.avatarUrl}></Avatar>
         {/* </Link> */}
         <Menu
           anchorEl={anchorEl}

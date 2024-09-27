@@ -3,18 +3,30 @@ import { Avatar, TextField, Button } from '@mui/material';
 import './UserProfile.scss';
 import axios from 'axios';
 import Header from '../../components/Header';
+import { useDispatch, useSelector } from 'react-redux';
+import { editUser, fetchUserById } from '../../redux/user';
 
 const UserProfile = () => {
   const [user, setUser] = useState({});
+  const fetchedUser = useSelector((store) => store.user.user);
+
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    fetchUser();
+    setUser(fetchedUser);
+  }, [fetchedUser]);
+
+  useEffect(() => {
+    dispatch(fetchUserById());
+    // fetchUser();
   }, []); //нужен чтобы контролировать состояния компонентов, когда прогрузился обновился закрылся или когда меняется переменная
 
-  const fetchUser = async () => {
-    const id = localStorage.getItem('userId');
-    const user = (await axios.get(`http://localhost:3001/users/${id}`)).data;
-    setUser(user);
-  };
+  // без редакса:
+  // const fetchUser = async () => {
+  //   const id = localStorage.getItem('userId');
+  //   const user = (await axios.get(`http://localhost:3001/users/${id}`)).data;
+  //   setUser(user);
+  // };
 
   const onChange = (event) => {
     const value = event.target.value;
@@ -23,7 +35,7 @@ const UserProfile = () => {
   };
 
   const onSave = async () => {
-    axios.put(`http://localhost:3001/users/${user.id}`, user);
+    dispatch(editUser(user));
   };
 
   return (
