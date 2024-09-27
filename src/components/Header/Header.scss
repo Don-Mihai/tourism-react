@@ -3,11 +3,15 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #f8f9fa;
+  background-color: white;
+  z-index: 100;
+  width: 100%;
+
 
   &__logo {
     display: flex;
     align-items: center;
+ 
 
     img {
       height: 40px;
@@ -27,12 +31,11 @@
 
     a {
       text-decoration: none;
-      color: #333;
       font-size: 16px;
       font-weight: 500;
 
       &:hover {
-        color: #007bff;
+        color: coral;
       }
     }
   }
