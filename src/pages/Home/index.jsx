@@ -1,16 +1,29 @@
 import React, { useState } from 'react';
-import { Button, TextField, Card, CardContent, Typography, MenuItem, Modal } from '@mui/material';
+import { Button, TextField, Card, CardContent, Typography, MenuItem } from '@mui/material';
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import './Home.scss';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import moment from 'moment';
+import Modal from '../../components/Modal';
 
 const HomePage = () => {
   const [dateStart, setDateStart] = useState('');
   const [dateEnd, setDateEnd] = useState('');
   const [interval, setInterval] = useState(0);
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeCard, setActiveCard] = useState({});
+
+  const openModal = () => {
+    setIsOpen(true);
+  };
+
+  const selectActiveCard = (card) => {
+    setActiveCard(card);
+    openModal();
+  };
 
   const handleDate = () => {
     const start = moment(dateStart.target?.value);
@@ -22,6 +35,8 @@ const HomePage = () => {
     // const date = new Date(); //new - из темы классов, когда создается экземпляр класса. Создается тип данных date.
     //console.log(dateStart.target?.value, dateEnd.target?.value); //знак вопроса для того чтобы если нет value, то не было бы ошибки
   };
+
+  console.log('home', isOpen);
 
   return (
     <>
@@ -52,13 +67,11 @@ const HomePage = () => {
             <Typography variant="body1" gutterBottom>
               Откройте для себя красоту Бали с нами. Забронируйте отдых, исследуйте достопримечательности и наслаждайтесь незабываемыми впечатлениями.
             </Typography>
-            <Button variant="contained" color="primary" className="main-page__cta-button">
+            <Button onClick={openModal} variant="contained" color="primary" className="main-page__cta-button">
               Исследовать Бали
             </Button>
+            <Modal isOpen={isOpen} title={activeCard.title} imageSrc={activeCard.imageSrc} setIsOpen={setIsOpen}></Modal>
 
-            <Modal open={true} onClose={() => {}}>
-              <div>модалка пока пустая</div>
-            </Modal>
             <div className="main-page__search">
               <TextField
                 label="Искать направления"
@@ -118,7 +131,7 @@ const HomePage = () => {
             Популярные направления
           </Typography>
           <div className="main-page__cards">
-            <Card className="main-page__card">
+            <Card onClick={() => selectActiveCard({ imageSrc: './img/ubud.jpg', title: 'Убуд' })} className="main-page__card">
               <CardContent>
                 <a href="./img/ubud.jpg" className="main-page__card__photoview" target="_blank" rel="noopener noreferrer">
                   <img src="./img/ubud.jpg" alt="Убуд" className="main-page__card-image" />
@@ -128,7 +141,7 @@ const HomePage = () => {
                 <Typography variant="body2">Центр традиционных ремесел и танцев, окруженный пышной природой и храмами.</Typography>
               </CardContent>
             </Card>
-            <Card className="main-page__card">
+            <Card onClick={() => selectActiveCard({ imageSrc: './img/seminiak.jpg', title: 'Семиньяк' })} className="main-page__card">
               <CardContent>
                 <a href="./img/seminiak.jpg" className="main-page__card__photoview" target="_blank" rel="noopener noreferrer">
                   <img src="./img/seminiak.jpg" alt="Семиньяк" className="main-page__card-image" />
