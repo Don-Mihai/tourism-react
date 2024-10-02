@@ -23,6 +23,9 @@ export const userSlice = createSlice({
       })
       .addCase(editUser.fulfilled, (state, action) => {
         state.user = action.payload;
+      })
+      .addCase(deleteUser.fulfilled, (state, action) => {
+        state.user = {};
       });
 
     // .addCase(fetchUserById.pending, (state, action) => {
@@ -46,6 +49,10 @@ export const editUser = createAsyncThunk('user/edit', async (user) => {
   const resUser = (await axios.put(`http://localhost:3001/users/${user.id}`, user)).data;
 
   return resUser;
+});
+
+export const deleteUser = createAsyncThunk('user/delete', async (userId) => {
+  axios.delete(`http://localhost:3001/users/${userId}`);
 });
 
 // Action creators are generated for each case reducer function

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, TextField, Card, CardContent, Typography, MenuItem } from '@mui/material';
+import { Button, TextField, Card, CardContent, Typography, MenuItem, Modal } from '@mui/material';
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import './Home.scss';
 
@@ -55,6 +55,10 @@ const HomePage = () => {
             <Button variant="contained" color="primary" className="main-page__cta-button">
               Исследовать Бали
             </Button>
+
+            <Modal open={true} onClose={() => {}}>
+              <div>модалка пока пустая</div>
+            </Modal>
             <div className="main-page__search">
               <TextField
                 label="Искать направления"
