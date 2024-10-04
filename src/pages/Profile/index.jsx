@@ -24,7 +24,7 @@ const UserProfile = () => {
   // без редакса:
   // const fetchUser = async () => {
   //   const id = localStorage.getItem('userId');
-  //   const user = (await axios.get(`http://localhost:3001/users/${id}`)).data;
+  //   const user = (await axios.get(`${API_URL}users/${id}`)).data;
   //   setUser(user);
   // };
 

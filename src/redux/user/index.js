@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { API_URL } from '../../utils';
 
 const initialState = {
   user: {},
@@ -41,18 +42,18 @@ export const userSlice = createSlice({
 
 export const fetchUserById = createAsyncThunk('user/fetchByIdStatus', async (userId) => {
   const id = userId || localStorage.getItem('userId');
-  const user = (await axios.get(`http://localhost:3001/users/${id}`)).data;
+  const user = (await axios.get(`${API_URL}users/${id}`)).data;
   return user;
 });
 
 export const editUser = createAsyncThunk('user/edit', async (user) => {
-  const resUser = (await axios.put(`http://localhost:3001/users/${user.id}`, user)).data;
+  const resUser = (await axios.put(`${API_URL}users/${user.id}`, user)).data;
 
   return resUser;
 });
 
 export const deleteUser = createAsyncThunk('user/delete', async (userId) => {
-  axios.delete(`http://localhost:3001/users/${userId}`);
+  axios.delete(`${API_URL}users/${userId}`);
 });
 
 // Action creators are generated for each case reducer function

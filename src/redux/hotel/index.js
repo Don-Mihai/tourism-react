@@ -2,6 +2,7 @@
 
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { API_URL } from '../../utils';
 
 const initialState = {
   hotels: [], // Массив для хранения всех отелей
@@ -14,19 +15,19 @@ const initialState = {
 // Асинхронный запрос для получения отеля по id
 export const fetchHotelById = createAsyncThunk('hotel/fetchByIdStatus', async (hotelId) => {
   const id = hotelId || localStorage.getItem('hotelId');
-  const hotel = (await axios.get(`http://localhost:3001/hotels/${id}`)).data;
+  const hotel = (await axios.get(`${API_URL}hotels/${id}`)).data;
   return hotel;
 });
 
 // Асинхронный запрос для редактирования отеля
 export const editHotel = createAsyncThunk('hotel/edit', async (hotel) => {
-  const resHotel = (await axios.put(`http://localhost:3001/hotels/${hotel.id}`, hotel)).data;
+  const resHotel = (await axios.put(`${API_URL}hotels/${hotel.id}`, hotel)).data;
   return resHotel;
 });
 
 // Асинхронный запрос для удаления отеля
 export const deleteHotel = createAsyncThunk('hotel/delete', async (hotelId) => {
-  await axios.delete(`http://localhost:3001/hotels/${hotelId}`);
+  await axios.delete(`${API_URL}hotels/${hotelId}`);
 });
 
 export const hotelsSlice = createSlice({
@@ -76,7 +77,7 @@ const initialState = {
 };
 
 export const fetchHotelById = createAsyncThunk('hotel/fetchByIdStatus', async (hotelId) => {
-  const hotel = (await axios.get(`http://localhost:3001/hotels/${id}`)).data;
+  const hotel = (await axios.get(`${API_URL}hotels/${id}`)).data;
   return hotel;
 });
 
@@ -97,11 +98,11 @@ export const hotelsSlice = createSlice({
 };
 
 export const editHotel = createAsyncThunk('hotel/edit', async (hotel) => {
-  const resHotel = (await axios.put(`http://localhost:3001/hotels/${hotel.id}`, hotel)).data;
+  const resHotel = (await axios.put(`${API_URL}hotels/${hotel.id}`, hotel)).data;
   return resHotel;
 });
 
 export const deleteHotel = createAsyncThunk('hotel/delete', async (hotelId) => {
-  axios.delete(`http://localhost:3001/hotels/${hotelId}`);
+  axios.delete(`${API_URL}hotels/${hotelId}`);
 });
 */

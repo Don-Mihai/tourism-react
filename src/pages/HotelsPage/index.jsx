@@ -5,6 +5,7 @@ import axios from 'axios';
 import Header from '../../components/Header';
 import { useSelector, useDispatch } from 'react-redux';
 import { decrement, increment } from '../../redux/counter';
+import { API_URL } from '../../utils';
 
 const HotelsPage = () => {
   const [hotels, setHotels] = useState([]);
@@ -16,7 +17,7 @@ const HotelsPage = () => {
   }, []);
 
   const getHotels = async () => {
-    const hotels = (await axios.get('http://localhost:3001/hotels')).data;
+    const hotels = (await axios.get(`${API_URL}hotels`)).data;
     setHotels(hotels);
   };
 

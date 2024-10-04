@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, TextField, Card, CardContent, Typography, MenuItem } from '@mui/material';
+import { Button, TextField, CardContent, Typography, MenuItem } from '@mui/material';
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import './Home.scss';
 
@@ -7,6 +7,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import moment from 'moment';
 import Modal from '../../components/Modal';
+import Card from '../../components/Card';
 
 const HomePage = () => {
   const [dateStart, setDateStart] = useState('');
@@ -131,36 +132,15 @@ const HomePage = () => {
             Популярные направления
           </Typography>
           <div className="main-page__cards">
-            <Card onClick={() => selectActiveCard({ imageSrc: './img/ubud.jpg', title: 'Убуд' })} className="main-page__card">
-              <CardContent>
-                <a href="./img/ubud.jpg" className="main-page__card__photoview" target="_blank" rel="noopener noreferrer">
-                  <img src="./img/ubud.jpg" alt="Убуд" className="main-page__card-image" />
-                </a>
+            <Card title="Убуд" imageUrl="./img/ubud.jpg" text="Центр традиционных ремесел и танцев, окруженный пышной природой и храмами." />
 
-                <Typography variant="h5">Убуд</Typography>
-                <Typography variant="body2">Центр традиционных ремесел и танцев, окруженный пышной природой и храмами.</Typography>
-              </CardContent>
-            </Card>
-            <Card onClick={() => selectActiveCard({ imageSrc: './img/seminiak.jpg', title: 'Семиньяк' })} className="main-page__card">
-              <CardContent>
-                <a href="./img/seminiak.jpg" className="main-page__card__photoview" target="_blank" rel="noopener noreferrer">
-                  <img src="./img/seminiak.jpg" alt="Семиньяк" className="main-page__card-image" />
-                </a>
-                <Typography variant="h5">Семиньяк</Typography>
-                <Typography variant="body2">
-                  Яркий пляжный город, известный своими роскошными курортами, элитными бутиками и оживленной ночной жизнью.
-                </Typography>
-              </CardContent>
-            </Card>
-            <Card className="main-page__card">
-              <CardContent>
-                <a href="./img/nusa-dua.jpg" className="main-page__card__photoview" target="_blank" rel="noopener noreferrer">
-                  <img src="./img/nusa-dua.jpg" alt="Нуса-Дуа" className="main-page__card-image" />
-                </a>
-                <Typography variant="h5">Нуса-Дуа</Typography>
-                <Typography variant="body2">Уникальное место с мировыми курортами, песчаными пляжами и спокойными водами.</Typography>
-              </CardContent>
-            </Card>
+            <Card
+              title="Семиньяк"
+              imageUrl="./img/seminiak.jpg"
+              text="Яркий пляжный город, известный своими роскошными курортами, элитными бутиками и оживленной ночной жизнью."
+            />
+
+            <Card title="Нуса-Дуа" imageUrl="./img/nusa-dua.jpg" text="Уникальное место с мировыми курортами, песчаными пляжами и спокойными водами." />
           </div>
         </div>
 
@@ -169,33 +149,11 @@ const HomePage = () => {
             Почему выбирают Бали
           </Typography>
           <div className="main-page__cards">
-            <Card className="main-page__card">
-              <CardContent>
-                <a href="./img/nature.jpg" className="main-page__card__photoview" target="_blank" rel="noopener noreferrer">
-                  <img src="./img/nature.jpg" alt="Удивительная природа" className="main-page__card-image" />
-                </a>
-                <Typography variant="h6">Удивительная природа</Typography>
-                <Typography variant="body2">Откройте для себя потрясающие пейзажи, от пляжей до гор.</Typography>
-              </CardContent>
-            </Card>
-            <Card className="main-page__card">
-              <CardContent>
-                <a href="./img/culture.jpg" className="main-page__card__photoview" target="_blank" rel="noopener noreferrer">
-                  <img src="./img/culture.jpg" alt="Богатая культура" className="main-page__card-image" />
-                </a>
-                <Typography variant="h6">Богатая культура</Typography>
-                <Typography variant="body2">Исследуйте уникальные традиции Бали, храмы и церемонии.</Typography>
-              </CardContent>
-            </Card>
-            <Card className="main-page__card">
-              <CardContent>
-                <a href="./img/luxury.jpg" className="main-page__card__photoview" target="_blank" rel="noopener noreferrer">
-                  <img src="./img/luxury.jpg" alt="Роскошное проживание" className="main-page__card-image" />
-                </a>
-                <Typography variant="h6">Роскошное проживание</Typography>
-                <Typography variant="body2">Останавливайтесь в известных на весь мир курортах, виллах и пляжных отелях.</Typography>
-              </CardContent>
-            </Card>
+            <Card title="Удивительная природа" imageUrl="./img/nature.jpg" text="Откройте для себя потрясающие пейзажи, от пляжей до гор." />
+
+            <Card title="Богатая культура" imageUrl="./img/culture.jpg" text="Исследуйте уникальные традиции Бали, храмы и церемонии." />
+
+            <Card title="Роскошное проживание" imageUrl="./img/luxury.jpg" text="Останавливайтесь в известных на весь мир курортах, виллах и пляжных отелях." />
           </div>
         </div>
         <Footer />

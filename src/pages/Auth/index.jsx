@@ -4,6 +4,7 @@ import './Auth.scss';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { setLocalUserId } from '../../redux/user';
+import { API_URL } from '../../utils';
 
 const initialValues = {
   email: '',
@@ -28,7 +29,7 @@ const Auth = () => {
       return;
     }
 
-    const user = (await axios.get(`http://localhost:3001/users?email=${formValues.email}&password=${formValues.password}`)).data[0];
+    const user = (await axios.get(`${API_URL}users?email=${formValues.email}&password=${formValues.password}`)).data[0];
 
     if (user) {
       dispatch(setLocalUserId(user.id));
