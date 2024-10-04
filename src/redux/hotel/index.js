@@ -76,12 +76,14 @@ const initialState = {
 };
 
 export const fetchHotelById = createAsyncThunk('hotel/fetchByIdStatus', async (hotelId) => {
-  const id = hotelId || localStorage.getItem('hotelId');
   const hotel = (await axios.get(`http://localhost:3001/hotels/${id}`)).data;
   return hotel;
 });
 
-extraReducers: (builder) => {
+export const hotelsSlice = createSlice({
+  name: 'hotel',
+  initialState,
+  extraReducers: (builder) => {
   builder
     .addCase(fetchHotelById.fulfilled, (state, action) => {
       state.hotel = action.payload;
