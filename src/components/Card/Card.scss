@@ -1,6 +1,7 @@
 
 .card-component {
     width: 300px;
+    cursor: pointer;
 
     &__image {
         width: 100%; /* Изображения будут занимать всю ширину контейнера */

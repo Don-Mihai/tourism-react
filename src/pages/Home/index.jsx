@@ -8,6 +8,7 @@ import Footer from '../../components/Footer';
 import moment from 'moment';
 import Modal from '../../components/Modal';
 import Card from '../../components/Card';
+import { popularDestinations, whyChooseBali } from '../../utils';
 
 const HomePage = () => {
   const [dateStart, setDateStart] = useState('');
@@ -71,7 +72,7 @@ const HomePage = () => {
             <Button onClick={openModal} variant="contained" color="primary" className="main-page__cta-button">
               Исследовать Бали
             </Button>
-            <Modal isOpen={isOpen} title={activeCard.title} imageSrc={activeCard.imageSrc} setIsOpen={setIsOpen}></Modal>
+            <Modal isOpen={isOpen} title={activeCard.title} imageSrc={activeCard.imageUrl} setIsOpen={setIsOpen}></Modal>
 
             <div className="main-page__search">
               <TextField
@@ -132,15 +133,15 @@ const HomePage = () => {
             Популярные направления
           </Typography>
           <div className="main-page__cards">
-            <Card title="Убуд" imageUrl="./img/ubud.jpg" text="Центр традиционных ремесел и танцев, окруженный пышной природой и храмами." />
-
-            <Card
-              title="Семиньяк"
-              imageUrl="./img/seminiak.jpg"
-              text="Яркий пляжный город, известный своими роскошными курортами, элитными бутиками и оживленной ночной жизнью."
-            />
-
-            <Card title="Нуса-Дуа" imageUrl="./img/nusa-dua.jpg" text="Уникальное место с мировыми курортами, песчаными пляжами и спокойными водами." />
+            {popularDestinations.map((destination, index) => (
+              <Card
+                onClick={() => selectActiveCard(destination)}
+                key={index}
+                title={destination.title}
+                imageUrl={destination.imageUrl}
+                text={destination.text}
+              />
+            ))}
           </div>
         </div>
 
@@ -149,11 +150,9 @@ const HomePage = () => {
             Почему выбирают Бали
           </Typography>
           <div className="main-page__cards">
-            <Card title="Удивительная природа" imageUrl="./img/nature.jpg" text="Откройте для себя потрясающие пейзажи, от пляжей до гор." />
-
-            <Card title="Богатая культура" imageUrl="./img/culture.jpg" text="Исследуйте уникальные традиции Бали, храмы и церемонии." />
-
-            <Card title="Роскошное проживание" imageUrl="./img/luxury.jpg" text="Останавливайтесь в известных на весь мир курортах, виллах и пляжных отелях." />
+            {whyChooseBali.map((item, index) => (
+              <Card onClick={() => selectActiveCard(item)} key={index} title={item.title} imageUrl={item.imageUrl} text={item.text} />
+            ))}
           </div>
         </div>
         <Footer />
