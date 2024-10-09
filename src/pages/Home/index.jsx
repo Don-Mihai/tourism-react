@@ -72,7 +72,7 @@ const HomePage = () => {
             <Button onClick={openModal} variant="contained" color="primary" className="main-page__cta-button">
               Исследовать Бали
             </Button>
-            <Modal isOpen={isOpen} title={activeCard.title} imageSrc={activeCard.imageUrl} setIsOpen={setIsOpen}></Modal>
+            <Modal isOpen={isOpen} title={activeCard.title} images={activeCard.images} setIsOpen={setIsOpen}></Modal>
 
             <div className="main-page__search">
               <TextField
@@ -138,7 +138,7 @@ const HomePage = () => {
                 onClick={() => selectActiveCard(destination)}
                 key={index}
                 title={destination.title}
-                imageUrl={destination.imageUrl}
+                imageUrl={destination.images[0].original}
                 text={destination.text}
               />
             ))}
@@ -150,9 +150,10 @@ const HomePage = () => {
             Почему выбирают Бали
           </Typography>
           <div className="main-page__cards">
-            {whyChooseBali.map((item, index) => (
-              <Card onClick={() => selectActiveCard(item)} key={index} title={item.title} imageUrl={item.imageUrl} text={item.text} />
-            ))}
+            {whyChooseBali.map((item, index) => {
+              console.log(item.images[0]);
+              return <Card onClick={() => selectActiveCard(item)} key={index} title={item.title} imageUrl={item.images[0].original} text={item.text} />;
+            })}
           </div>
         </div>
         <Footer />

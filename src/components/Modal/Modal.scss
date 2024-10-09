@@ -4,9 +4,18 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 800px;
-  height: 400px;
+  min-height: 400px;
   padding: 4px;
   background-color: #fff;
 
   display: flex;
+  gap: 20px;
+
+  &__content{
+    min-width: 250px;
+  }
+}
+
+.image-gallery-slide img {
+    height: 400px;
 }

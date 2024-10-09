@@ -3,17 +3,7 @@ import ImageGallery from 'react-image-gallery';
 import './Modal.scss';
 import { useEffect, useState } from 'react';
 
-const Modal = ({ setIsOpen, isOpen, imageSrc, title }) => {
-  const [images, setImages] = useState([]);
-
-  useEffect(() => {
-    if (typeof imageSrc === 'string') {
-      setImages([{ original: imageSrc }]);
-    } else {
-      setImages(imageSrc?.map?.((src) => ({ original: src })));
-    }
-  }, [imageSrc, title]);
-
+const Modal = ({ setIsOpen, isOpen, images = [], title, text, children }) => {
   const closeModal = () => {
     setIsOpen(false);
   };
@@ -24,10 +14,13 @@ const Modal = ({ setIsOpen, isOpen, imageSrc, title }) => {
         {/* <a href={imageSrc} className="main-page__card__photoview" target="_blank" rel="noopener noreferrer">
           <img src={imageSrc} alt={title} className="main-page__card-image" />
         </a> */}
-        <ImageGallery items={images} />
+        <ImageGallery items={Array.isArray(images) ? images : []} />
 
         <div className="modal-component__content">
-          <h3>{title}</h3>
+          {/* <h3>{title}</h3> */}
+          <input type="text" value={title} />
+          <textarea name="" id="" value={text} placeholder="Введите текст..."></textarea>
+          {children}
         </div>
       </div>
     </ModalMui>
