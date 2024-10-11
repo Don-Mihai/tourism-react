@@ -3,7 +3,23 @@ import ImageGallery from 'react-image-gallery';
 import './Modal.scss';
 import { useEffect, useState } from 'react';
 
+const initialState = {
+  title: '',
+};
+
 const Modal = ({ setIsOpen, isOpen, images = [], title, text, children }) => {
+  const [formValues, setFormValues] = useState(initialState);
+
+  useEffect(() => {
+    setFormValues({ title });
+  }, []);
+
+  const onChange = (event) => {
+    const value = event.target.value;
+    const key = event.target.name;
+    setFormValues({ ...formValues, [key]: value });
+  };
+
   const closeModal = () => {
     setIsOpen(false);
   };
@@ -17,9 +33,8 @@ const Modal = ({ setIsOpen, isOpen, images = [], title, text, children }) => {
         <ImageGallery items={Array.isArray(images) ? images : []} />
 
         <div className="modal-component__content">
-          {/* <h3>{title}</h3> */}
-          <input type="text" value={title} />
-          <textarea name="" id="" value={text} placeholder="Введите текст..."></textarea>
+          <input name="title" onChange={onChange} className="modal-component__input" type="text" value={formValues.title} />
+          {/* <textarea name="" id="" value={text} placeholder="Введите текст..."></textarea> */}
           {children}
         </div>
       </div>
