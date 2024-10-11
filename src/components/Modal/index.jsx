@@ -2,6 +2,8 @@ import { Modal as ModalMui } from '@mui/material';
 import ImageGallery from 'react-image-gallery';
 import './Modal.scss';
 import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { ROLE_USER } from '../../utils';
 
 const initialState = {
   title: '',
@@ -9,10 +11,13 @@ const initialState = {
 
 const Modal = ({ setIsOpen, isOpen, images = [], title, text, children }) => {
   const [formValues, setFormValues] = useState(initialState);
+  const user = useSelector((store) => store.user.user);
+
+  const isUser = user.role === ROLE_USER;
 
   useEffect(() => {
     setFormValues({ title });
-  }, []);
+  }, [title]);
 
   const onChange = (event) => {
     const value = event.target.value;
@@ -24,6 +29,8 @@ const Modal = ({ setIsOpen, isOpen, images = [], title, text, children }) => {
     setIsOpen(false);
   };
 
+  console.log(formValues);
+
   return (
     <ModalMui open={isOpen} onClose={closeModal}>
       <div className="modal-component">
@@ -33,7 +40,7 @@ const Modal = ({ setIsOpen, isOpen, images = [], title, text, children }) => {
         <ImageGallery items={Array.isArray(images) ? images : []} />
 
         <div className="modal-component__content">
-          <input name="title" onChange={onChange} className="modal-component__input" type="text" value={formValues.title} />
+          <input name="title" onChange={onChange} disabled={isUser} className="modal-component__input" type="text" value={formValues.title} />
           {/* <textarea name="" id="" value={text} placeholder="Введите текст..."></textarea> */}
           {children}
         </div>

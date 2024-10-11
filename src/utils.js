@@ -23,3 +23,5 @@ export const whyChooseBali = [
     text: 'Останавливайтесь в известных на весь мир курортах, виллах и пляжных отелях.',
   },
 ];
+
+export const ROLE_USER = 'user';

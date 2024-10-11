@@ -8,7 +8,8 @@
       "phone": "+79031009900",
       "address": "Moscow CA zip 123456",
       "lastName": "Fedchenko",
-      "avatarUrl": "https://cs6.livemaster.ru/storage/51/8d/e9304e78c01418b5ea956d3be36a.jpg"
+      "avatarUrl": "https://cs6.livemaster.ru/storage/51/8d/e9304e78c01418b5ea956d3be36a.jpg",
+      "role": "admin"
     },
     {
       "id": "32ab",
@@ -18,7 +19,8 @@
       "phone": "+79031009900",
       "address": "Moscow CA zip 123456",
       "lastName": "Francheskoo",
-      "avatarUrl": "https://cs6.livemaster.ru/storage/51/8d/e9304e78c01418b5ea956d3be36a.jpg"
+      "avatarUrl": "https://cs6.livemaster.ru/storage/51/8d/e9304e78c01418b5ea956d3be36a.jpg",
+      "role": "user"
     }
   ],
   "hotels": [
