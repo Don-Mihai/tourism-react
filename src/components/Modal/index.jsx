@@ -29,6 +29,8 @@ const Modal = ({ setIsOpen, isOpen, images = [], title, text, children }) => {
     setIsOpen(false);
   };
 
+  // --- comment!!--//
+
   console.log(formValues);
 
   return (
