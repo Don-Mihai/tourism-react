@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './Header.scss';
 import { Avatar, Menu, MenuItem, ListItemIcon, Divider } from '@mui/material';
 import { useEffect, useState } from 'react';
@@ -53,6 +53,8 @@ const Header = () => {
     handleClose();
   };
 
+  const [activeSection, setActiveSection] = useState('home');
+
   return (
     <header className="header">
       <div className="counter">
@@ -65,10 +67,21 @@ const Header = () => {
       </Link>
 
       <nav className="header__menu">
-        <Link to={'/home'}>Главная</Link>
-        <Link to={'/about'}>О нас</Link>
-        <Link to={'/posts'}>Посты</Link>
-        <Link to={'/hotels'}>Отели</Link>
+        <NavLink to="/home" className={({ isActive }) => (isActive ? 'header__menu-active' : 'header__menu')}>
+          Главная
+        </NavLink>
+
+        <NavLink to="/about" className={({ isActive }) => (isActive ? 'header__menu-active' : 'header__menu')}>
+          О нас
+        </NavLink>
+
+        <NavLink to="/posts" className={({ isActive }) => (isActive ? 'header__menu-active' : 'header__menu')}>
+          Посты
+        </NavLink>
+
+        <NavLink to="/hotels" className={({ isActive }) => (isActive ? 'header__menu-active' : 'header__menu')}>
+          Отели
+        </NavLink>
       </nav>
 
       <div className="header__user">

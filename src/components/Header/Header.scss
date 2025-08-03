@@ -7,6 +7,7 @@
   z-index: 100;
   width: 100%;
 
+  
 
   &__logo {
     display: flex;
@@ -29,6 +30,8 @@
     display: flex;
     gap: 20px; // расстояние между ссылками
 
+	
+
     a {
       text-decoration: none;
       font-size: 16px;
@@ -37,7 +40,13 @@
       &:hover {
         color: coral;
       }
+		
     }
+
+	&-active {
+		color: #efef07 !important;
+	 }
+	 
   }
 
   &__user {
@@ -57,3 +66,4 @@
   width: 24px !important;
   height: 24px !important;
 }
+
