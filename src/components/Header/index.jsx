@@ -61,13 +61,13 @@ const Header = () => {
         <button onClick={handlePlus}>+</button>
         <button onClick={handleMinus}>-</button>
       </div>
-      <Link className="header__logo" to={'/home'}>
+      <Link className="header__logo" to={'/'}>
         <img src="/path/to/logo.png" alt="" />
         <span className="header__title">Rhythm Tourism</span>
       </Link>
 
       <nav className="header__menu">
-        <NavLink to="/home" className={({ isActive }) => (isActive ? 'header__menu-active' : 'header__menu')}>
+        <NavLink to="/" className={({ isActive }) => (isActive ? 'header__menu-active' : 'header__menu')}>
           Главная
         </NavLink>
 
