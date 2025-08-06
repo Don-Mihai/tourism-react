@@ -1,13 +1,22 @@
-.post {
+.posts {
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
     margin-bottom: 20px;
+	 display: flex;
+	 flex-direction: column;
+	 
+	 align-items: center;
 
     &__title {
       font-size: 24px;
       font-weight: bold;
       margin-bottom: 10px;
+		display:inline-block;
+    }
+
+	 &__item {
+      margin-top: 50px;
     }
   
     &__content {

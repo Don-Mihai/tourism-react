@@ -4,7 +4,6 @@ import { Avatar, Menu, MenuItem, ListItemIcon, Divider } from '@mui/material';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
-import { decrement, increment } from '../../redux/counter';
 
 import PersonAdd from '@mui/icons-material/PersonAdd';
 import Settings from '@mui/icons-material/Settings';
@@ -16,13 +15,6 @@ const Header = () => {
   const fetchedUser = useSelector((store) => store.user.user);
 
   const dispatch = useDispatch();
-  const handlePlus = () => {
-    dispatch(increment());
-  };
-
-  const handleMinus = () => {
-    dispatch(decrement());
-  };
 
   const open = Boolean(anchorEl);
 
@@ -53,14 +45,8 @@ const Header = () => {
     handleClose();
   };
 
-  const [activeSection, setActiveSection] = useState('home');
-
   return (
     <header className="header">
-      <div className="counter">
-        <button onClick={handlePlus}>+</button>
-        <button onClick={handleMinus}>-</button>
-      </div>
       <Link className="header__logo" to={'/'}>
         <img src="/path/to/logo.png" alt="" />
         <span className="header__title">Rhythm Tourism</span>

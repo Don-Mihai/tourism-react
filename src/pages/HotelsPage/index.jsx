@@ -4,7 +4,7 @@ import './HotelsPage.scss';
 import axios from 'axios';
 import Header from '../../components/Header';
 import { useSelector, useDispatch } from 'react-redux';
-import { decrement, increment } from '../../redux/counter';
+
 import { API_URL } from '../../utils';
 import Modal from '../../components/Modal';
 
