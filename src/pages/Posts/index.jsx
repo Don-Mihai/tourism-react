@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../../components/Header';
+import './Posts.scss';
 
 const Posts = () => {
   return (
@@ -20,7 +21,7 @@ const Posts = () => {
           <li className="posts__item">
             <img
               className="posts__image"
-              src="https://images.unsplash.com/photo-1516972811507-4443f266a197?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
               alt="Цель путешествия 2"
             />
             <h3 className="posts__subtitle">Исследуйте пустыню</h3>
